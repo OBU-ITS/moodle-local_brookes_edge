@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<XMLDB PATH="local/brookes_edge/db" VERSION="20171108" COMMENT="XMLDB file for BrookesEDGE"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../../../lib/xmldb/xmldb.xsd"
+>
+  <TABLES>
+    <TABLE NAME="local_brookes_edge_entries" COMMENT="BrookesEDGE STAR Entries">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="author_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The author's Moodle user ID"/>
+        <FIELD NAME="activity_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Activity ID"/>
+        <FIELD NAME="attribute_code" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Attribute code"/>
+        <FIELD NAME="title" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Title"/>
+        <FIELD NAME="situation" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Situation"/>
+        <FIELD NAME="task" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Task"/>
+        <FIELD NAME="action" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Action"/>
+        <FIELD NAME="result" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="Result"/>
+        <FIELD NAME="link" TYPE="text" NOTNULL="false" SEQUENCE="false" COMMENT="URL link (if any)"/>
+        <FIELD NAME="submitted" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Submitted?"/>
+        <FIELD NAME="update_time" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Time of entry update"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="author_id" UNIQUE="false" FIELDS="author_id" COMMENT="The authors's Moodle user ID"/>
+      </INDEXES>
+    </TABLE>
+  </TABLES>
+</XMLDB>
