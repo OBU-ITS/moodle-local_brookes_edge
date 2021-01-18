@@ -29,5 +29,32 @@ function xmldb_local_brookes_edge_upgrade($oldversion = 0) {
 
     $result = true;
 
+    if ($oldversion < 2020120200) {
+
+		// Define table local_brookes_edge_awards
+		$table = new xmldb_table('local_brookes_edge_awards');
+
+		// Add fields
+		$table->add_field('id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, XMLDB_SEQUENCE, null);
+		$table->add_field('recipient_id', XMLDB_TYPE_INTEGER, '10', null, XMLDB_NOTNULL, null, '0');
+		$table->add_field('award_time', XMLDB_TYPE_INTEGER, '10', null, null, null, '0');
+		$table->add_field('issued', XMLDB_TYPE_INTEGER, '1', null, null, null, '0');
+		$table->add_field('issue_time', XMLDB_TYPE_INTEGER, '10', null, null, null, '0');
+
+		// Add keys
+		$table->add_key('primary', XMLDB_KEY_PRIMARY, array('id'));
+
+		// Add indexes
+		$table->add_index('recipient_id', XMLDB_INDEX_UNIQUE, array('recipient_id'));
+
+		// Conditionally create table
+		if (!$dbman->table_exists($table)) {
+			$dbman->create_table($table);
+		}
+
+        // brookes_edge savepoint reached
+        upgrade_plugin_savepoint(true, 2020120200, 'local', 'brookes_edge');
+    }
+
     return $result;
 }

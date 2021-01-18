@@ -26,5 +26,20 @@
         <INDEX NAME="author_id" UNIQUE="false" FIELDS="author_id" COMMENT="The authors's Moodle user ID"/>
       </INDEXES>
     </TABLE>
+    <TABLE NAME="local_brookes_edge_awards" COMMENT="BrookesEDGE Awards">
+      <FIELDS>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
+        <FIELD NAME="recipient_id" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="The recipient's Moodle user ID"/>
+        <FIELD NAME="award_time" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Time award made"/>
+        <FIELD NAME="issued" TYPE="int" LENGTH="1" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Certificate issued?"/>
+        <FIELD NAME="issue_time" TYPE="int" LENGTH="10" NOTNULL="true" DEFAULT="0" SEQUENCE="false" COMMENT="Time of certificate issue"/>
+      </FIELDS>
+      <KEYS>
+        <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+      </KEYS>
+      <INDEXES>
+        <INDEX NAME="recipient_id" UNIQUE="false" FIELDS="recipient_id" COMMENT="The recipient's Moodle user ID"/>
+      </INDEXES>
+    </TABLE>
   </TABLES>
 </XMLDB>

@@ -26,6 +26,14 @@
 $string['privacy:metadata'] = 'The BrookesEDGE plugin does not store any personal data.';
 
 $string['pluginname'] = 'BrookesEDGE';
+$string['title'] = 'BrookesEDGE';
+
+$string['minimum_words'] = 'Minimum words';
+$string['minimum_words_desc'] = 'Minimum words required for each STAR entry.';
+$string['minimum_entries'] = 'Minimum entries';
+$string['minimum_entries_desc'] = 'Minimum STAR entries for the EDGE.';
+$string['minimum_attributes'] = 'Minimum attributes';
+$string['minimum_attributes_desc'] = 'Minimum different attributes for the EDGE.';
 
 $string['activities'] = 'List of activities';
 $string['no_activities'] = 'No activities match your search';
@@ -38,3 +46,10 @@ $string['invalid_date'] = 'Invalid date';
 
 $string['download'] = 'Download';
 
+$string['entry'] = 'a STAR entry';
+$string['entries'] = '{$a} STAR entries';
+$string['attribute'] = 'an attribute';
+$string['attributes'] = '{$a} attributes';
+
+$string['salutation'] = 'Dear';
+$string['closing'] = 'Best wishes';
